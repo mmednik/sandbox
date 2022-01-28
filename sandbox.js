@@ -50,10 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
   function draw() {
     const s = document.getElementById("sandbox");
     const ctx = s.getContext("2d");
+   
     s.style.height = window.innerHeight + "px";
     s.style.width = window.innerWidth + "px";
+  
 
     s.width = s.height * (s.clientWidth / s.clientHeight);
+
+    ctx.fillStyle = "rgb(0, 0, 0)";
+    ctx.fillRect(0, 0, s.width, s.height);
 
     if (rightPressed) {
       posX += 1;
@@ -67,8 +72,8 @@ document.addEventListener("DOMContentLoaded", function () {
       posY += 1;
     }
 
-    ctx.fillStyle = "rgb(200, 0, 0)";
-    ctx.fillRect(posX, posY, 5, 10);
+    ctx.fillStyle = "rgb(255, 255, 255)";
+    ctx.fillRect(posX, posY, 2, 2);
     window.requestAnimationFrame(draw);
   }
 
